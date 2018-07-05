@@ -1,0 +1,6 @@
+framework module Pods_RemoteAndLocalNotification {
+  umbrella header "Pods-RemoteAndLocalNotification-umbrella.h"
+
+  export *
+  module * { export * }
+}
