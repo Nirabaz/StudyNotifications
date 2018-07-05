@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "15BDBEC9A056D4F1CDE9DE2A680AD244"
-               BlueprintName = "PusherSwift"
+               BlueprintIdentifier = "FC9B68D42FD26A60BCEB86272B1E82B2"
+               BlueprintName = "NWPusher"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "PusherSwift.framework">
+               BuildableName = "NWPusher.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

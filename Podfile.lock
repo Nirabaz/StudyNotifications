@@ -1,16 +1,16 @@
 PODS:
-  - PusherSwift (5.1.1)
+  - NWPusher (0.7.5)
 
 DEPENDENCIES:
-  - PusherSwift (~> 5.0)
+  - NWPusher (~> 0.7.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - PusherSwift
+    - NWPusher
 
 SPEC CHECKSUMS:
-  PusherSwift: de9238b6b9faec5275d452e5f43ce9c82b78731e
+  NWPusher: 9b29a44754d88cb02c28a1e9bc8750845506123e
 
-PODFILE CHECKSUM: 9200710d41a575a32017731bf9df81b0d6ed8f11
+PODFILE CHECKSUM: 0f74b819a685ac1b212da02c27d85f77ec958b09
 
 COCOAPODS: 1.5.2

@@ -13,6 +13,7 @@
 		5968AE6420EE32B900816766 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5968AE6220EE32B900816766 /* Main.storyboard */; };
 		5968AE6620EE32BA00816766 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5968AE6520EE32BA00816766 /* Assets.xcassets */; };
 		5968AE6920EE32BA00816766 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5968AE6720EE32BA00816766 /* LaunchScreen.storyboard */; };
+		5968AE7120EE517B00816766 /* UserNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5968AE7020EE517B00816766 /* UserNotificationsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,8 @@
 		5968AE6520EE32BA00816766 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5968AE6820EE32BA00816766 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5968AE6A20EE32BA00816766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5968AE7020EE517B00816766 /* UserNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationsManager.swift; sourceTree = "<group>"; };
+		5968AE7220EE5F9100816766 /* RemoteAndLocalNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RemoteAndLocalNotification.entitlements; sourceTree = "<group>"; };
 		7D115BEB1DC4F6D68B4CB1F1 /* Pods-RemoteAndLocalNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemoteAndLocalNotification.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemoteAndLocalNotification/Pods-RemoteAndLocalNotification.release.xcconfig"; sourceTree = "<group>"; };
 		ADA1DF827525F590F8C3D208 /* Pods-RemoteAndLocalNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemoteAndLocalNotification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemoteAndLocalNotification/Pods-RemoteAndLocalNotification.debug.xcconfig"; sourceTree = "<group>"; };
 		FC02532B0D3DE83C7E0A7BAE /* Pods_RemoteAndLocalNotification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemoteAndLocalNotification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,8 +73,10 @@
 		5968AE5D20EE32B800816766 /* RemoteAndLocalNotification */ = {
 			isa = PBXGroup;
 			children = (
+				5968AE7220EE5F9100816766 /* RemoteAndLocalNotification.entitlements */,
 				5968AE5E20EE32B800816766 /* AppDelegate.swift */,
 				5968AE6020EE32B900816766 /* ViewController.swift */,
+				5968AE7020EE517B00816766 /* UserNotificationsManager.swift */,
 				5968AE6220EE32B900816766 /* Main.storyboard */,
 				5968AE6520EE32BA00816766 /* Assets.xcassets */,
 				5968AE6720EE32BA00816766 /* LaunchScreen.storyboard */,
@@ -122,6 +127,11 @@
 				TargetAttributes = {
 					5968AE5A20EE32B800816766 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -182,11 +192,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RemoteAndLocalNotification/Pods-RemoteAndLocalNotification-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/PusherSwift/PusherSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/NWPusher/NWPusher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PusherSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NWPusher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -202,6 +212,7 @@
 			files = (
 				5968AE6120EE32B900816766 /* ViewController.swift in Sources */,
 				5968AE5F20EE32B800816766 /* AppDelegate.swift in Sources */,
+				5968AE7120EE517B00816766 /* UserNotificationsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +357,7 @@
 			baseConfigurationReference = ADA1DF827525F590F8C3D208 /* Pods-RemoteAndLocalNotification.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RemoteAndLocalNotification/RemoteAndLocalNotification.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = EYQ8RAML68;
@@ -368,6 +380,7 @@
 			baseConfigurationReference = 7D115BEB1DC4F6D68B4CB1F1 /* Pods-RemoteAndLocalNotification.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RemoteAndLocalNotification/RemoteAndLocalNotification.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = EYQ8RAML68;

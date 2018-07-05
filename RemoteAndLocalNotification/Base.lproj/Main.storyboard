@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +13,81 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RemoteAndLocalNotification" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Notifications time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trp-Yc-pL4">
+                                <rect key="frame" x="100" y="34" width="175" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="YRD-Fz-H9c">
+                                <rect key="frame" x="0.0" y="69" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="552487932.86068797">
+                                    <!--2018-07-05 12:52:12 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="EOW-0a-vyY">
+                                <rect key="frame" x="0.0" y="390" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="552487944.96052897">
+                                    <!--2018-07-05 12:52:24 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remote Notifications Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egW-7L-UdS">
+                                <rect key="frame" x="86" y="355" width="202" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3j-ad-Lex">
+                                <rect key="frame" x="14" y="614" width="347" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IOn-Yr-aSb"/>
+                                </constraints>
+                                <state key="normal" title="Set Remote Notification"/>
+                                <connections>
+                                    <action selector="onAddremoteNotificationsBtmPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7c9-iz-BjJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gY-GO-981">
+                                <rect key="frame" x="14" y="293" width="347" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="c7j-ll-gzy"/>
+                                </constraints>
+                                <state key="normal" title="Set User Notification"/>
+                                <connections>
+                                    <action selector="onAddUserNotificationsBtmPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZXC-bJ-d8u"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="v3j-ad-Lex" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="D8A-nV-o5u"/>
+                            <constraint firstItem="egW-7L-UdS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GZW-B4-Ps5"/>
+                            <constraint firstItem="egW-7L-UdS" firstAttribute="top" secondItem="2gY-GO-981" secondAttribute="bottom" constant="32" id="LZK-Rk-I9m"/>
+                            <constraint firstItem="2gY-GO-981" firstAttribute="top" secondItem="YRD-Fz-H9c" secondAttribute="bottom" constant="8" id="LwF-ce-uF2"/>
+                            <constraint firstItem="Trp-Yc-pL4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="Nhd-3a-EFi"/>
+                            <constraint firstItem="YRD-Fz-H9c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OSn-VR-lOA"/>
+                            <constraint firstItem="YRD-Fz-H9c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OoQ-Cl-ljT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v3j-ad-Lex" secondAttribute="trailing" constant="14" id="SGk-lt-I4Y"/>
+                            <constraint firstItem="v3j-ad-Lex" firstAttribute="top" secondItem="EOW-0a-vyY" secondAttribute="bottom" constant="8" id="V1g-hQ-jUD"/>
+                            <constraint firstItem="EOW-0a-vyY" firstAttribute="top" secondItem="egW-7L-UdS" secondAttribute="bottom" constant="14" id="WTu-zY-vV4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2gY-GO-981" secondAttribute="trailing" constant="14" id="cFG-FP-Rib"/>
+                            <constraint firstItem="EOW-0a-vyY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="frV-Q1-fNQ"/>
+                            <constraint firstItem="Trp-Yc-pL4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lm9-6l-0U4"/>
+                            <constraint firstItem="2gY-GO-981" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="mnI-B1-6AN"/>
+                            <constraint firstItem="YRD-Fz-H9c" firstAttribute="top" secondItem="Trp-Yc-pL4" secondAttribute="bottom" constant="14" id="qtM-ov-pXi"/>
+                            <constraint firstItem="EOW-0a-vyY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="y9J-Fz-cTY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="remoteNotificationDatePicker" destination="EOW-0a-vyY" id="dHn-wC-GlI"/>
+                        <outlet property="userNotificationDatePicker" destination="YRD-Fz-H9c" id="8XC-aY-ZKi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
